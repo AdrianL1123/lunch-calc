@@ -5,6 +5,19 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 
+type Meal = {
+  date: string;
+  items: number[];
+  sstEnabled: boolean;
+  serviceEnabled: boolean;
+  sst: number;
+  service: number;
+  subtotal: number;
+  sstAmount: number;
+  serviceAmount: number;
+  total: number;
+};
+
 export default function LunchCalculator() {
   function formatCurrency(value: number) {
     return `RM${value.toFixed(2)}`;
@@ -23,7 +36,7 @@ export default function LunchCalculator() {
   const [sst, setSst] = useState(8);
   const [service, setService] = useState(10);
   const [dark, setDark] = useState(false);
-  const [mealLog, setMealLog] = useState<Array<any>>([]);
+  const [mealLog, setMealLog] = useState<Meal[]>([]);
   const [logCollapsed, setLogCollapsed] = useState(true);
 
   useEffect(() => {
