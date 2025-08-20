@@ -66,16 +66,6 @@ export default function LunchCalculator() {
     }
   };
 
-  const handleReset = () => {
-    setInput("");
-    setItems([]);
-    setSstEnabled(false);
-    setServiceEnabled(false);
-    setSst(8);
-    setService(10);
-    setDark(false);
-  };
-
   const handleNewMeal = () => {
     if (items.length > 0) {
       const subtotal = items.reduce((a, b) => a + b, 0);
